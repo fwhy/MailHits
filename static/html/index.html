@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MailHits - Email Testing Tool</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/img/logo.png">
+</head>
+<body>
+<header>
+    <div>
+        <img src="/static/img/logo.png" alt="MailHits Logo" class="logo" width="36" height="36" />
+        <h1>MailHits</h1>
+    </div>
+    <div>
+        <button id="clear-all" class="button danger"><span class="icon">&#128465;</span> Clear All</button>
+    </div>
+</header>
+<main>
+    <div id="email-list">
+        <!-- Email items will be added here -->
+    </div>
+    <div id="email-content">
+        <div id="no-email-selected">
+            <p><span class="icon i2x">&#128231;</span> No email selected</p>
+        </div>
+        <div id="email-details" style="display: none;">
+            <div class="email-header">
+                <h2 id="email-subject"></h2>
+                <div id="email-from"></div>
+                <div id="email-to"></div>
+                <div id="email-time"></div>
+            </div>
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <div class="tab-button active" data-tab="html">HTML</div>
+                    <div class="tab-button" data-tab="text">Text</div>
+                    <div class="tab-button" data-tab="headers">Headers</div>
+                    <div class="tab-button" data-tab="attachments"><span class="icon">&#128206;</span> Attachments</div>
+                </div>
+                <div class="tab-content active" id="tab-html">
+                    <iframe id="html-frame"></iframe>
+                </div>
+                <div class="tab-content" id="tab-text">
+                    <pre id="text-content"></pre>
+                </div>
+                <div class="tab-content" id="tab-headers">
+                    <pre id="headers-content"></pre>
+                </div>
+                <div class="tab-content" id="tab-attachments">
+                    <div id="attachments-list">
+                        <p id="no-attachments" class="no-items-message">No attachments found</p>
+                        <ul id="attachments-items"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
